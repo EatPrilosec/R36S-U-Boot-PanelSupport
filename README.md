@@ -25,7 +25,7 @@ However, if PanelPathSlash is populated, uboot will load from that path. allowin
 setenv dtb_name \"${PanelPathSlash}rg351mp-kernel.dtb\"", 0);
 ```
 
-Then, bootcmd will try to load PanCho.ini (this script) before boot.ini
+Then, bootcmd will try to load PanCho.ini before boot.ini
 
 ```
 ####################################################################################
