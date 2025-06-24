@@ -12,7 +12,7 @@ fi
 ```
 Example `logo.env` file contents: (note the trailing slash)
 
-```PanelPathSlash="ScreenFiles/Panel 4/" ```
+```PanelPathSlash=ScreenFiles/Panel 4/ ```
 
 I've also added a variable before the dtb name, without a slash. 
 if the var is not populated, and logo.env is not present,
