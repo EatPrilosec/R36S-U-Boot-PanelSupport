@@ -16,9 +16,10 @@ Example `logo.env` file contents: (note the trailing slash)
 ```PanelPathSlash=ScreenFiles/Panel 4/ ```
 
 I've also added a variable before the dtb name, without a slash. 
-if the var is not populated, and logo.env is not present,
-uboot behaves as expected. However, if PanelPathSlash is populated,
-uboot will load from that path. allowing for panel dtb for the logo to be set in uboot
+
+if the var is not populated, and logo.env is not present, uboot behaves as expected.
+
+However, if PanelPathSlash is populated, uboot will load from that path. allowing for panel dtb for the logo to be set in uboot
 
 ```
 setenv dtb_name \"${PanelPathSlash}rg351mp-kernel.dtb\"", 0);
