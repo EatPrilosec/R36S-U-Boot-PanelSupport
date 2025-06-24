@@ -2,8 +2,9 @@
 u-boot dtb for each panel, organized, and a panel chooser to be used with R36s-U-Boot (todo: link)
 
 
-Uboot loads env AFTER board setup, meaning the logo and logo dtb path was hardcoded
-so before dtb gets loaded, i've added this
+## Uboot loads env AFTER board setup, meaning the logo and logo dtb path was hardcoded
+
+### so before dtb gets loaded, i've added this
 
 ```
 if load mmc 1:1 ${loadaddr} logo.env; then; 
