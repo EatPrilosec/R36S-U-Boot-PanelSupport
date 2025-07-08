@@ -1,5 +1,5 @@
 # R36S-U-Boot-PanelSupport
-u-boot dtb for each panel, organized, and a panel chooser to be used with R36s-U-Boot (todo: link)
+u-boot dtb for each panel, organized, and a panel chooser to be used with [R36s-U-Boot](https://github.com/R36S-Stuff/R36S-u-boot): [Download here](https://github.com/R36S-Stuff/R36S-u-boot-builder/releases/tag/v1)
 
 
 ## Uboot loads env AFTER board setup, meaning the logo and logo dtb path was hardcoded
@@ -7,15 +7,15 @@ u-boot dtb for each panel, organized, and a panel chooser to be used with R36s-U
 ### so before dtb gets loaded, i've added this
 
 ```
-if load mmc 1:1 ${loadaddr} logo.env; then; 
-    env import -t ${loadaddr} ${filesize}; 
+if load mmc 1:1 ${loadaddr} logo.env; then;
+    env import -t ${loadaddr} ${filesize};
 fi
 ```
 Example `logo.env` file contents: (note the trailing slash)
 
 ```PanelPathSlash=ScreenFiles/Panel 4/ ```
 
-I've also added a variable before the dtb name, without a slash. 
+I've also added a variable before the dtb name, without a slash.
 
 if the var is not populated, and logo.env is not present, uboot behaves as expected.
 
@@ -40,7 +40,7 @@ U         =   New Panel 1
 R         =   New Panel 2
 D         =   New Panel 3
 L         =   New Panel 4
-X(north)  =   New Panel 5 (changes kernel)
+X(north)  =   Empty
 A(east)   =   Original Panel
 B(south)  =   RGB20S
 Y(west)   =   Custom
@@ -50,7 +50,7 @@ Y(west)   =   Custom
 
 
 ```
-# # # # # # # # # # # # # # # # # # # # 
+# # # # # # # # # # # # # # # # # # # #
 #  _________________________________  #
 # |                                 | #
 # |                                 | #
@@ -62,7 +62,7 @@ Y(west)   =   Custom
 # |                                 | #
 # |_________________________________| #
 #                                     #
-#         1                5          #
+#         1                           #
 #         ▲               (X)         #
 #     4 ◄   ► 2   Custom(Y) (A)Orig   #
 #         ▼               (B)         #
@@ -74,3 +74,9 @@ Y(west)   =   Custom
 #                                     #
 # # # # # # # # # # # # # # # # # # # #
 ```
+
+
+
+> (included logo.bmp is from [sect2k](https://github.com/sect2k/r36s-outline))
+
+> thanks to @rocknix for the idea/inspiration and the gpio reading example from their `boot.ini`
